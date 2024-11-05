@@ -1,13 +1,16 @@
 require('dotenv').config()
 const express = require('express')
-const notesRoutes = require('./routes/NotesRoutes.js')
+const notesRoutes = require('./routes/notesRoutes.js')
 const mongoose = require('mongoose')
 const app = express();
+const cors = require("cors");
 
 //middleware
 
 // to user req.body
 app. use(express.json())
+app.use(cors());
+
 //to log routes
 app.use((req, res, next) => {
     console.log(req.path, req.method)

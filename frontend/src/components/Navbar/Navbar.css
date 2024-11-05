@@ -1,0 +1,88 @@
+/* Navbar.css */
+
+.navbar {
+    background: linear-gradient(135deg, #0d0d30, #1b0036);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  
+  /* Glowing hover effect */
+  .nav-link:hover {
+    color: #ff8cff;
+    text-shadow: 0 0 8px rgba(255, 140, 255, 0.8),
+                 0 0 16px rgba(255, 140, 255, 0.6);
+  }
+  
+  /* Subtle star-like sparkles effect on hover */
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ff8cff;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-link:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Underline animation */
+  .nav-link:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff8cff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .nav-link:hover:after {
+    width: 100%;
+  }
+  
+  /* Adding space between links and edges */
+  .nav-list li {
+    padding: 0 1rem;
+  }
+  
