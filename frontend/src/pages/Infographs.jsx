@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as d3 from 'd3';  // Import d3
+import Bg from '../components/bg';
 
 const ScatterPlot = ({ data, xParam, yParam, colorParam }) => {
   useEffect(() => {
@@ -151,7 +152,19 @@ const Infographs = () => {
   }, [[xParam, yParam]]);
 
   return (
-    <div>
+    <div> 
+      <Bg />
+      <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: '10', // Ensures this div stays above the background
+          backgroundColor: 'rgba(255, 255, 255, 0.8)', // Optional: adds a translucent white background
+          padding: '10px',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        }}>
       <h1>Exoplanet Scatter Plot</h1>
       <div>
         <label>
@@ -186,6 +199,7 @@ const Infographs = () => {
         </label>
       </div>
       <ScatterPlot data={data} xParam={xParam} yParam={yParam} colorParam={colorParam} />
+      </div>
     </div>
   );
 };

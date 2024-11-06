@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const notesRoutes = require('./routes/notesRoutes.js')
 const exoRoutes = require('./routes/exoRoutes.js')
+const homeRoutes = require('./routes/homeRoutes.js')
 const mongoose = require('mongoose')
 const app = express();
 const cors = require("cors");

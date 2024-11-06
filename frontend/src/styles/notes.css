@@ -47,6 +47,8 @@
   
   /* New note form */
   label,
+  
+  
   input {
     display: block;
   }
@@ -60,7 +62,7 @@
     border-radius: 4px;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-    color: #ffffff; /* Text color for input */
+    color: #000000; /* Text color for input */
   }
   
   form button {

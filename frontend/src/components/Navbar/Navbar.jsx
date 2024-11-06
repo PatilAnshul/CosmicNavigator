@@ -15,8 +15,11 @@ const Navbar = () => {
               <Link to="/notes" className="nav-link">Notes</Link>
             </li>
             <li>
-              <Link to="/solar" className="nav-link">Solar</Link>
+             <a href="http://localhost:5173/" className="nav-link" target="_blank" rel="noopener noreferrer">
+              Solar
+            </a>
             </li>
+
             <li>
               <Link to="/infographs" className="nav-link">Infographs</Link>
             </li>
