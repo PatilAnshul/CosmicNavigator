@@ -3,7 +3,7 @@ const router = express.Router()
 const Home = require('../models/HomeModel')
 let recentEntries = []; // Array to store user entries
 
-app.post('/save-user', (req, res) => {
+router.post('/save-user', (req, res) => {
     const { name, email } = req.body;
     console.log('User Data:', { name, email });
 
@@ -18,11 +18,12 @@ app.post('/save-user', (req, res) => {
     res.status(200).send({ message: 'User data saved successfully!' });
 });
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Welcome to the Cosmic API Server! ');
 });
 
-app.get('/recent-entries', (req, res) => {
+router.get('/recent-entries', (req, res) => {
     res.status(200).json(recentEntries); // Send the recent entries
 });
 
+module.exports = router;

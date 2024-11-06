@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require('express')
-const notesRoutes = require('./routes/notesRoutes.js')
-const exoRoutes = require('./routes/exoRoutes.js')
-const homeRoutes = require('./routes/homeRoutes.js')
+const NotesRoutes = require('./routes/notesRoutes.js')
+const ExoRoutes = require('./routes/exoRoutes.js')
+const HomeRoutes = require('./routes/homeRoutes.js')
 const mongoose = require('mongoose')
 const app = express();
 const cors = require("cors");
@@ -20,15 +20,15 @@ app.use((req, res, next) => {
 })
 
 //routes
-app.use('/notes', notesRoutes);
-app.use('/exoplanets', exoRoutes);
-app.use('./Home', homeRoutes);
+app.use('/notes', NotesRoutes);
+app.use('/exoplanets', ExoRoutes);
+app.use('./Home', HomeRoutes);
 
 //mongodb
 mongoose.connect(process.env.MONGO_URI)
     .then( ()=>{
         app.listen(process.env.PORT, ()=>{
-            console.log("connected to database & lilstening on port", process.env.PORT) 
+            console.log("Connected to database & listening on port", process.env.PORT) 
         });
     })
     .catch( (error)=>{console.log(error)});
