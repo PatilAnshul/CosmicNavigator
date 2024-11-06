@@ -1,12 +1,12 @@
 import React from "react";
 import "./index.css";
 import Navbar from "./components/Navbar/Navbar";
-import Footer5 from "./components/Footer/Footer5.jsx";
+//import Footer5 from "./components/Footer/Footer5.jsx";
 import Home from "./pages/home.jsx";
 import Infographs from "./pages/Infographs.jsx";
 import Note from "./pages/notes.jsx";
 import Solar from "./pages/Solar.jsx";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
