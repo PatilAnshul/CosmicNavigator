@@ -8,6 +8,7 @@ const {
     updateNote
   } = require('../controllers/notesController')
 
+
 //get 
 router.get('/', getNotes)
 

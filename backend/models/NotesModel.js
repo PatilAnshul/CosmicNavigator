@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
+const notesDb = mongoose.connection.useDb("test")
 
 const notesSchema = new Schema({
     star:{
@@ -15,8 +16,9 @@ const notesSchema = new Schema({
         type: String,
         required: true
     }
-},{timestamps:true})
+},{timestamps:true},
+{ collection: 'exoplanets' })
 
-const Notes = mongoose.model('Notes', notesSchema);
+const Notes = notesDb.model('Notes', notesSchema);
 
 module.exports = Notes;

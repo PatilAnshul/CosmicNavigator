@@ -129,12 +129,28 @@ const Infographs = () => {
   const [yParam, setYParam] = useState('Mass (MJ)');
   const [colorParam, setColorParam] = useState('Radius (RJ)');
 
-  const columns = ['Mass (MJ)', 'Radius (RJ)', 'Period (days)', 'Semi-major axis (AU)', 'Temp. (K)', 'Distance (ly)', 'Host star mass (M☉)', 'Host star temp. (K)'];
-
+  const columns = [
+    'Mass (MJ)', // Numeric, can be used for X or Y axis in scatterplot
+    'Radius (RJ)', // Numeric, can be used for X or Y axis in scatterplot
+    'Period (days)', // Numeric, potential for X or Y axis
+    'Semi-major axis (AU)', // Numeric, can be plotted against another value
+    'Distance (ly)', // Numeric, can be used in scatterplot
+    'Host star mass (M☉)', // Numeric, good for X or Y axis
+    'Host star temp (K)', // Numeric, can be plotted against another numeric value
+    'Disc Year', // Numeric, not typically used for scatterplots but useful for time-based trends
+  ];
+  
+  
   useEffect(() => {
     // Fetch the dataset from public folder
-    d3.csv('/exoplanets.csv').then(setData);
-  }, []);
+    if (xParam && yParam) {
+      // Fetch data from the backend API with selected parameters
+      fetch(`http://localhost:4000/exoplanets?xParam=${xParam}&yParam=${yParam}`)
+        .then((response) => response.json())
+        .then((data) => setData(data))
+        .catch((error) => console.error('Error fetching data:', error));
+    }
+  }, [[xParam, yParam]]);
 
   return (
     <div>
