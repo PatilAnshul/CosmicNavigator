@@ -18,14 +18,14 @@
   
   /* Hover effect for cosmic glow */
   .note-details:hover {
-    box-shadow: 0 8px 20px rgba(255, 140, 255, 0.5), 0 4px 10px rgba(255, 140, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(11, 194, 255, 0.895), 0 4px 10px rgba(76, 222, 236, 0.856);
     transform: translateY(-5px);
   }
   
   .note-details h4 {
     margin: 0 0 10px 0;
     font-size: 1.5em;
-    color: #ff8cff;
+    color: #1ed2df;
   }
   
   .note-details p {
@@ -64,7 +64,7 @@
   }
   
   form button {
-    background: #ff8cff; /* Primary button color matching theme */
+    background: #1ed2df; /* Primary button color matching theme */
     border: 0;
     color: #ffffff; /* Button text color */
     padding: 10px;

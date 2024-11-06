@@ -39,9 +39,9 @@
   
   /* Glowing hover effect */
   .nav-link:hover {
-    color: #ff8cff;
-    text-shadow: 0 0 8px rgba(255, 140, 255, 0.8),
-                 0 0 16px rgba(255, 140, 255, 0.6);
+    color: #000000;
+    text-shadow: 0 0 8px rgba(113, 241, 255, 0.977),
+                 0 0 16px rgba(113, 241, 255, 0.977);
   }
   
   /* Subtle star-like sparkles effect on hover */
@@ -53,7 +53,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #ff8cff;
+    background-color: rgba(113, 241, 255, 0.977);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -70,7 +70,7 @@
     display: block;
     width: 0;
     height: 2px;
-    background: #ff8cff;
+    background: #007fa9;
     transition: width 0.3s;
     position: absolute;
     bottom: -5px;
