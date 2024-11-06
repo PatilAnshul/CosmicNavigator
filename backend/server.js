@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 //routes
 app.use('/notes', notesRoutes);
 app.use('/exoplanets', exoRoutes);
+app.use('./Home', homeRoutes);
 
 //mongodb
 mongoose.connect(process.env.MONGO_URI)

@@ -8,7 +8,7 @@ const FooterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await fetch('http://localhost:5000/api/save-user', {
+            await fetch('http://localhost:4000/Home/save-user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

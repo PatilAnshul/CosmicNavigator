@@ -6,7 +6,7 @@ function RecentEntries() {
 
     useEffect(() => {
         const fetchEntries = async () => {
-            const response = await axios.get('http://localhost:5000/api/recent-entries');
+            const response = await axios.get('http://localhost:4000/Home/recent-entries');
             setEntries(response.data);
         };
         fetchEntries();
