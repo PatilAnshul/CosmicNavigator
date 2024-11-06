@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 //routes
 app.use('/notes', NotesRoutes);
 app.use('/exoplanets', ExoRoutes);
-app.use('./Home', HomeRoutes);
+app.use('/Home', HomeRoutes);
 
 //mongodb
 mongoose.connect(process.env.MONGO_URI)
