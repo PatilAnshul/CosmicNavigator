@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
+import { NotesContextProvider } from './components/context/NotesContext';
+
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <NotesContextProvider>
+      <App />
+    </NotesContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

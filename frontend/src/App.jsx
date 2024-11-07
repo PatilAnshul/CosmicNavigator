@@ -11,6 +11,8 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
+      
+      console.log("hii")
       <Navbar />
       <div className="content content-margin-top">
         <Routes>
@@ -23,7 +25,7 @@ function App() {
       </div>
       {/* <Footer5 /> */}
     </div>
-  );
+  ); 
 }
 
 export default App;

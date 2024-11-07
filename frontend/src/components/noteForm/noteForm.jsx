@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useNotesContext } from '../hooks/useNotesContext'
 
 
 const NoteForm = () => {
+  
+  const { dispatch } = useNotesContext()
   const [star, setStar] = useState('');
   const [physical, setPhysical] = useState('');
   const [note, setNote] = useState('');
@@ -29,7 +32,9 @@ const NoteForm = () => {
       setStar('');
       setPhysical('');
       setNote('');
-      console.log('new Note added:', json);
+      //console.log('new Note added:', json);
+      dispatch({type: 'CREATE_NOTE', payload: json})
+
     }
   };
 

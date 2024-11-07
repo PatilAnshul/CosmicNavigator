@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import '../styles/notes.css';
+import { useNotesContext } from "../components/hooks/useNotesContext"
+
 // components
 
 import NoteDetails from "../components/noteDetails/noteDetails"
 import NoteForm from "../components/noteForm/noteForm"
 const Note = () => {
 
-  const [notes, setnotes] = useState(null)
+  //const [notes, setnotes] = useState(null)
+  const { notes, dispatch } = useNotesContext()
 
   useEffect(() => {
     const fetchnotes = async () => {
@@ -16,12 +19,16 @@ const Note = () => {
         
       if (response.ok) {
         console.log("setting notes")
-        setnotes(json)
+        //setnotes(json)
+        dispatch({type: 'SET_NOTES', payload: json})
       }
+      else {
+        console.log("Fetch failed:", response.statusText);
+    }
     }
 
     fetchnotes()
-  }, [])
+  }, [dispatch])
 
   return (
     
