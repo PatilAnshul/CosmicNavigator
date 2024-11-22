@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 // get all notes
 const getNotes = async (req, res) => {
   const notes = await Notes.find({}).sort({createdAt: -1})
-  console.log("wtf")
+  //console.log("wtf")
   res.status(200).json(notes)
 }
 
